@@ -36,9 +36,10 @@
 					<th>placeinfo</th>
 					<th>For Edit</th>
 					<th>For Delete</th>
+					<th>Img</th>
 					
 				</tr>
-				<c:forEach var="route" items="${route}">
+				<c:forEach var="route" items="${routes}">
 					<tr>
 						<td>${route.id}</td>
 						<td>${route.name}</td>
@@ -57,7 +58,10 @@
 								<input type="submit" value="Delete" />
 							</form>
 						</td>
-						<td></td>
+						<td>
+						<%-- <img src="file:///${download}/${route.path}"/> --%>
+						<embed src="${contextPath}/images/${route.path}" width="80" height="80">
+						</td>
 					</tr>
 				</c:forEach>
 			</table>

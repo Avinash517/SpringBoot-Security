@@ -1,15 +1,17 @@
 package trg.talentsprint.starterkit.model;
 
 import javax.persistence.Entity;
+
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+
 
 @Entity
 public class Favplace {
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long fid;
 	
 	private long rid;
 	private String username;
@@ -19,10 +21,10 @@ public class Favplace {
 	}
 	
 	public Long getId() {
-		return id;
+		return fid;
 	}
-	public void setId(Long id) {
-		this.id = id;
+	public void setId(Long fid) {
+		this.fid = fid;
 	}
 	public long getRid() {
 		return rid;

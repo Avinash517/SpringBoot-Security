@@ -1,9 +1,13 @@
 package trg.talentsprint.starterkit.model;
 
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Transient;
+
 
 @Entity
 public class Route {
@@ -16,7 +20,7 @@ public class Route {
 	
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long rid;
 	
 	private String name;
 	private String type;
@@ -25,10 +29,10 @@ public class Route {
 	private String routefrom;
 	private String routeto;
 	private String username;
-    
 	private String location;
 	private String placename;
-	private String placeinfo;
+	private String placeinfo;	
+	private String path;
 	
 	public String getLocation() {
 		return location;
@@ -49,10 +53,10 @@ public class Route {
 		this.placeinfo = placeinfo;
 	}
 	public Long getId() {
-		return id;
+		return rid;
 	}
-	public void setId(Long id) {
-		this.id = id;
+	public void setId(Long rid) {
+		this.rid = rid;
 	}
 	public String getName() {
 		return name;
@@ -95,5 +99,11 @@ public class Route {
 	}
 	public void setUsername(String username) {
 		this.username = username;
+	}
+	public String getPath() {
+		return path;
+	}
+	public void setPath(String path) {
+		this.path = path;
 	}
 }

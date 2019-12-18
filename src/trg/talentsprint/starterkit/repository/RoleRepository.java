@@ -6,3 +6,5 @@ import trg.talentsprint.starterkit.model.Role;
 
 public interface RoleRepository extends JpaRepository<Role, Long>{
 }
+
+

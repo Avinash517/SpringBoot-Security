@@ -17,17 +17,15 @@
 		</a>
 	</p>
 	<h1>Add New Route</h1>
-	<form:form action="${contextPath}/${user}/add" modelAttribute="route"
-		method="post">
-  user name: ${user}
+	<form action="${contextPath}/${user}/add?${_csrf.parameterName}=${_csrf.token}"
+		method="post" enctype="multipart/form-data">
           <div>
-			<form:label path="name">Route Name</form:label>
-			<form:input type="text" id="name" path="name" required="true" />
-			<form:errors path="name" />
+          Route Name:
+			<input type="text" id="name" name="name" required/>
 		</div>
 		<div>
-			<form:label path="type">Category of Travel</form:label>
-			<select name="type" id="type" path="type" required="true">
+			<label>Category of Travel</label>
+			<select name="type" id="type" required>
 				<option value="nul">Select</option>
 				<option value="Bus">Bus</option>
 				<option value="Car">Car</option>
@@ -35,46 +33,40 @@
 			</select>
 		</div>
 		<div>
-			<form:label path="keywords">Keywords</form:label>
-			<form:input type="text" id="keywords" path="keywords" required="true" />
-			<form:errors path="keywords" />
+			<label>Keywords</label>
+			<input type="text" id="keywords" name="keywords" required />
 		</div>
 		<div>
-			<form:label path="decryption">Tell About Route</form:label>
-			<form:input type="text" id="decryption" path="decryption"
-				required="true" />
-			<form:errors path="decryption" />
+			<label>Tell About Route</label>
+			<input type="text" id="decryption" name="decryption" required/>
 		</div>
 		<div>
-			<form:label path="routefrom">Route from</form:label>
-			<form:input type="text" id="routefrom" path="routefrom"
-				required="true" />
-			<form:errors path="routefrom" />
+			<label>Route from</label>
+			<input type="text" id="routefrom" name="rfrom" required/>
 		</div>
 		<div>
-			<form:label path="routeto">Route To</form:label>
-			<form:input type="text" id="routeto" path="routeto" required="true" />
-			<form:errors path="routeto" />
+			<label>Route To</label>
+			<input type="text" id="routeto" name="rto" required />
 		</div>
 		<div>
-			<form:label path="location">location</form:label>
-			<form:input type="text" id="location" path="location" required="true" />
-			<form:errors path="location" />
+			<label>location</label>
+			<input type="text" id="location" name="location" required/>
 		</div>
 		<div>
-			<form:label path="placename">Place Name</form:label>
-			<form:input type="text" id="placename" path="placename"
-				required="true" />
-			<form:errors path="placename" />
+			<label>Place Name</label>
+			<input type="text" id="placename" name="placename" required />
 		</div>
 		<div>
-			<form:label path="placeinfo">Tell About Place</form:label>
-			<form:input type="text" id="placeinfo" path="placeinfo" required="true" />
-			<form:errors path="placeinfo" />
+			<label>Tell About Place</label>
+			<input type="text" id="placeinfo" name="placeinfo" required/>
+		</div>
+		<div>
+			<label>Image</label>
+			<input type="file" name="file" required/>
 		</div>
 		<div>
 			<input type="submit" value="Add Route">
 		</div>
-	</form:form>
+	</form>
 </body>
 </html>
