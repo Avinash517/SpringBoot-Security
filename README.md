@@ -1,3 +1,10 @@
 # springboot-skeleton
 
-Springboot Project Skeleton
+Springboot Project with security
+-Java
+-Mysql
+-JSP
+-JSTL
+-Tomcat
+
+-Login and Registration with pasword encryption
